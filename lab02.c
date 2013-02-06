@@ -16,13 +16,15 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 
 #include <stdio.h>
 
+const int n = 1000;		//	static global scope
+int y = 1000;			//	modifiable global scope
 
 int main(int argc, char** argv)
 {
 
 	//	int arrayOfNumber[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-	int r = 10;
+	int r = 10;		//	only visible in main
 
 	return 0;
 }
