@@ -15,16 +15,54 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 //	Week 2, Lab 02
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
+/*	Function Prototypes	
+*/
+
+double getAverage(int array[]);
+
+/*	Global variables
+*/
 const int n = 1000;		//	static global scope
 int y = 1000;			//	modifiable global scope
 
 int main(int argc, char** argv)
 {
 
-	//	int arrayOfNumber[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	int arrayOfNumbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-	int r = 10;		//	only visible in main
+	//int r = 10;		//	only visible in main
+
+
+	double average = getAverage(arrayOfNumbers);
+
+	printf("The average of the array is => %.2f\n", average);
 
 	return 0;
+}
+
+double getAverage(int array[])
+{
+	int i;
+	double average = 0;
+	long arraySize = (sizeof array / sizeof(array[0]));
+
+	//printf("\nThe total size of the array is => %ld", sizeof array);
+	//printf("\nThe total size of each block in the array is => %ld", sizeof(array[5]));
+
+	printf("\narray size => %ld\n", arraySize);
+
+	for(i = 0; i < 10; i++)
+	{
+		average = average + array[i];
+		//printf ("%f\n", average);
+	}
+
+	//printf("The sum of all the numbers in the array is => %f\n", average);
+	
+	average = average / 10;
+
+	return average;
 }
