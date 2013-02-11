@@ -14,6 +14,8 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 
 //	Week 2, Lab 02
 
+/*  Included libraries
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -21,48 +23,59 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 /*	Function Prototypes	
 */
 
-double getAverage(int array[]);
+double getAverage(int array[], long count);
+
 
 /*	Global variables
 */
 const int n = 1000;		//	static global scope
 int y = 1000;			//	modifiable global scope
+int arraySize;
 
 int main(int argc, char** argv)
 {
 
-	int arrayOfNumbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
+	int i = 0;
 	//int r = 10;		//	only visible in main
 
+	printf("\nPlease enter the size of the array => ");
+	scanf("%d", &arraySize);
 
-	double average = getAverage(arrayOfNumbers);
+	int userArray[arraySize];
+	
+	for(i = 0; i < arraySize; i++)
+	{
+			printf("Please enter a number for array index[%d] => ",i);
+			scanf("%d", &userArray[i]);
+	}
 
-	printf("The average of the array is => %.2f\n", average);
+	//printf("\nThe total size of the array is => %ld", sizeof arrayOfNumbers);
+	//printf("\nThe total size of each block in the array is => %ld", sizeof arrayOfNumbers[0]);
+	//long arrayCount = (sizeof arrayOfNumbers / sizeof arrayOfNumbers[0]);
+	//printf("\nArray Count => %ld", arrayCount);
+	
+	double average = getAverage(userArray, arraySize);
+
+	printf("\nThe average of the array is => %.2f\n", average);
 
 	return 0;
 }
 
-double getAverage(int array[])
+
+double getAverage(int array[], long count)
 {
 	int i;
 	double average = 0;
-	long arraySize = (sizeof array / sizeof(array[0]));
 
-	//printf("\nThe total size of the array is => %ld", sizeof array);
-	//printf("\nThe total size of each block in the array is => %ld", sizeof(array[5]));
-
-	printf("\narray size => %ld\n", arraySize);
-
-	for(i = 0; i < 10; i++)
+	for(i = 0; i < count; i++)
 	{
 		average = average + array[i];
 		//printf ("%f\n", average);
 	}
 
-	//printf("The sum of all the numbers in the array is => %f\n", average);
+	//printf("\nAverage => %f\n", average);
 	
-	average = average / 10;
+	average = average / count;
 
 	return average;
 }
