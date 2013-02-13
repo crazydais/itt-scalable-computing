@@ -20,49 +20,56 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 #include <stdlib.h>
 #include <unistd.h>
 
-/*	Function Prototypes	
-*/
-
-double getAverage(int array[], long count);
-
 
 /*	Global variables
 */
 const int n = 1000;		//	static global scope
 int y = 1000;			//	modifiable global scope
-int arraySize;
+long arraySize;
+
+/*	Function Prototypes	
+*/
+
+void populateArray(int *array, long count);
+double getAverage(int *array, long count);
+double getVariance(int *array, long count, double average);
+
+//  Main...
 
 int main(int argc, char** argv)
 {
-
-	int i = 0;
-	//int r = 10;		//	only visible in main
-
-	printf("\nPlease enter the size of the array => ");
-	scanf("%d", &arraySize);
+	printf("Please enter the array size => ");
+	scanf("%ld", &arraySize);
 
 	int userArray[arraySize];
 	
-	for(i = 0; i < arraySize; i++)
-	{
-			printf("Please enter a number for array index[%d] => ",i);
-			scanf("%d", &userArray[i]);
-	}
+	populateArray (userArray, arraySize);
 
-	//printf("\nThe total size of the array is => %ld", sizeof arrayOfNumbers);
-	//printf("\nThe total size of each block in the array is => %ld", sizeof arrayOfNumbers[0]);
-	//long arrayCount = (sizeof arrayOfNumbers / sizeof arrayOfNumbers[0]);
-	//printf("\nArray Count => %ld", arrayCount);
-	
 	double average = getAverage(userArray, arraySize);
 
+	double variance = getVariance(userArray, arraySize, average);
+
 	printf("\nThe average of the array is => %.2f\n", average);
+
+	printf("\nThe variance of the array is => %.2f\n", variance);
 
 	return 0;
 }
 
+//	  Functions...
 
-double getAverage(int array[], long count)
+void populateArray (int *array, long count)
+{
+	int i;
+	
+	for(i = 0; i < count; i++)
+	{
+		array[i] = rand() % 100;
+	}
+
+}
+
+double getAverage(int *array, long count)
 {
 	int i;
 	double average = 0;
@@ -78,4 +85,18 @@ double getAverage(int array[], long count)
 	average = average / count;
 
 	return average;
+}
+
+double getVariance(int *array, long count, double average)
+{
+	int i;
+	double variance;
+
+	for(i = 0; i < count; i++)
+	{
+
+	}
+	
+	
+	return variance;
 }
