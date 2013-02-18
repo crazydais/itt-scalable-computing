@@ -19,6 +19,7 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <math.h>
 
 
 /*	Global variables
@@ -38,7 +39,7 @@ double getVariance(int *array, long count, double average);
 
 int main(int argc, char** argv)
 {
-	printf("Please enter the array size => ");
+	printf("\nPlease enter the array size => ");
 	scanf("%ld", &arraySize);
 
 	int userArray[arraySize];
@@ -47,11 +48,19 @@ int main(int argc, char** argv)
 
 	double average = getAverage(userArray, arraySize);
 
+	int j;
+	for(j = 0; j < arraySize; j++)
+	{
+		printf("\nArray[j] => %d", userArray[j]);
+	}
+
 	double variance = getVariance(userArray, arraySize, average);
 
-	printf("\nThe average of the array is => %.2f\n", average);
+	printf("\nThe average of the array is => %.2f", average);
 
-	printf("\nThe variance of the array is => %.2f\n", variance);
+	printf("\nThe variance of the array is => %.2f", variance);
+
+	printf("\n");
 
 	return 0;
 }
@@ -90,13 +99,14 @@ double getAverage(int *array, long count)
 double getVariance(int *array, long count, double average)
 {
 	int i;
-	double variance;
-
+	double variance = 0;
+	
 	for(i = 0; i < count; i++)
 	{
-
+		variance = variance + (pow((array[i] - average), 2));
 	}
-	
+
+	variance = variance / (count - 1);
 	
 	return variance;
 }
