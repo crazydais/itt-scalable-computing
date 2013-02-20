@@ -16,4 +16,21 @@ Once the user has entered the intended array size, an array of that size is crea
 
 The 'populateArray' uses a for loop which stops at the arraySize.  It uses the 'rand' function, "rand() % 100", which is part of the <stdlib.h> library, to enter in a number into each index of the array.  The rand() function only allows numbers 0 - 99.
 
-The 'getAverage' is then called as part of a printf statement in the main program.  Like the 'populateArray', the array and arraySize are passed as arguments into the 'getAverage' function.  The most intensive part of the code uses a for loop, with a limit of the arraySize.  All the values in each index of the array are added together using the code, " average = average + array[i];".  Then the answer is divided by the arraySize to give the average.  The result is returned and printed out to the terminal.
+The 'getAverage' is then called as part of a printf() statement in the main program.  Like the 'populateArray', the array and arraySize are passed as arguments into the 'getAverage' function.  The most intensive part of the code uses a for loop, with a limit of the arraySize.  All the values in each index of the array are added together using the code, " average = average + array[i];".  Then the answer is divided by the arraySize to give the average.  The result is returned and printed out to the terminal.
+
+The 'getVariance' function is called the same way as the 'getAverage'.  It is calculated by the algorithm, 
+
+{{{ 
+ for(i = 0; i < count; i++)
+        {
+                variance = variance + (pow((array[i] - average), 2));
+        }
+
+        variance = variance / (count - 1);
+}}}
+
+The code summates each number in the array to the limit of the arraySize, less the average value, all squared.  
+
+The final answer is divided by the (arraySize - 1)
+
+The variance is returned and both the average and the variance is displayed in the terminal.
