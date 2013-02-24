@@ -54,4 +54,4 @@ Since both the getAverage and getVariance methods both have the same work load, 
 
 If we considered the getAverage function, we get the mathematical formula
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{i = 1}^{n}average@plus;average[i]" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{i = 1}^{n}average+average[i]" title="\sum_{i = 1}^{n}average+average[i]" /></a>
+https://docs.google.com/file/d/0B3SEjgAj6sURZlhYS2pPNDdKNW8/edit
