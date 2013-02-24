@@ -18,6 +18,14 @@ The 'populateArray' uses a for loop which stops at the arraySize.  It uses the '
 
 The 'getAverage' is then called as part of a printf() statement in the main program.  Like the 'populateArray', the array and arraySize are passed as arguments into the 'getAverage' function.  The most intensive part of the code uses a for loop, with a limit of the arraySize.  All the values in each index of the array are added together using the code, " average = average + array[i];".  Then the answer is divided by the arraySize to give the average.  The result is returned and printed out to the terminal.
 
+{{{
+        for(i = 0; i < count; i++)
+        {
+                average = average + array[i];
+                //printf ("%f\n", average);
+        }
+}}}
+
 The 'getVariance' function is called the same way as the 'getAverage'.  It is calculated by the algorithm, 
 
 {{{ 
@@ -34,3 +42,16 @@ The code summates each number in the array to the limit of the arraySize, less t
 The final answer is divided by the (arraySize - 1)
 
 The variance is returned and both the average and the variance is displayed in the terminal.
+
+= Big O-Notation =
+
+The O-Notation (aka big O- Notation) is an indication of the efficiency of the algorithms used in the program.  There are two requirements when considering O-notation,
+
+(i)   -  the scalar or 'm' factor is not relevant
+(ii)  -  the algorithm with the greatest workload is only considered
+
+Since both the getAverage and getVariance methods both have the same work load, (ie, both have for loops to the limit of count), the O-notation for the Average_Variance can be considered by either function.
+
+If we considered the getAverage function, we get the mathematical formula
+
+&sum (
