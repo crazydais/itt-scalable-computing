@@ -54,4 +54,4 @@ Since both the getAverage and getVariance methods both have the same work load, 
 
 If we considered the getAverage function, we get the mathematical formula
 
-http://www.flickr.com/photos/90450394@N02/8505685416/
+http://farm9.staticflickr.com/8390/8505685416_81d08f5f46_m.jpg
