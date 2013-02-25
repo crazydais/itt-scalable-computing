@@ -55,3 +55,9 @@ Since both the getAverage and getVariance methods both have the same work load, 
 If we considered the getAverage function, we get the mathematical formula
 
 http://farm9.staticflickr.com/8390/8505685416_81d08f5f46_m.jpg
+
+This summation simplifies to,
+
+    *O(n)* 
+
+in big O-notation.
