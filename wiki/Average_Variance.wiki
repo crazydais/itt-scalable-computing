@@ -58,6 +58,6 @@ http://farm9.staticflickr.com/8390/8505685416_81d08f5f46_m.jpg
 
 This summation simplifies to,
 
-    *O(n)* 
+     = O(n) = 
 
 in big O-notation.
