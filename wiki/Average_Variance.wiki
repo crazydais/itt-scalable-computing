@@ -1,7 +1,7 @@
 #labels average,Variance,big-O
 = Summary = 
 
-  This wiki discusses the Average & Variance C-program and it's performance.
+This wiki discusses the Average & Variance C-program and it's performance.
 
 = Introduction =
 
