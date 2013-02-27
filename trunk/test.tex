@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\title{Davey's Doc}
+\date{}
+\author{David Nolan}
+\begin{document}
+\maketitle{}
+%\center{This is text centred}  %	use the  % for comments within a latex doc
+\section{first section}
+hello, this is a latex document...
+\subsection{Introduction}
+this is a subsection...
+\section{second section}
+this is the second section....
+\subsection{Background}
+this is a subsection...
+\begin{equation} 
+\label{eqn:i}
+\sum_{i=1}^n i
+\end{equation}
+We would like to use the summation laws to simplify the Eqn. ~\ref{eqn:i}
+\begin{equation} 
+\label{eqn:j}
+\sum_{i=1}^n n
+\end{equation}
+This simplifies to
+\begin{equation}
+n
+\end{equation}
+
+%	Tell latex to ignore following text using {verbatim}
+\begin{verbatim}
+int main (int argc, char** argv) {
+
+  int intarray[n];
+
+  populateData(intarray, n);
+
+  return 0;
+}
+\end{verbatim}
+
+%\includegraphics{image.png}
+
+\end{document}
