@@ -16,10 +16,9 @@ To build a program to compute the arithmetic mean and variance (lecture) of an a
 
 /*  Included libraries
  */
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <math.h>
+#include <stdio.h>		//	standard functions
+#include <stdlib.h>		//	rand function
+#include <math.h>		//	sqrt function
 
 
 /*	Global variables
