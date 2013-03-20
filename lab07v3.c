@@ -14,7 +14,7 @@ void *PrintHello(void *threadid)
 		long chunk = sizeof(array) / sizeof(array[0]) / NUM_THREADS;		//	This gets the size of the array by dividing it's total size by each array element size, and then dividing that by the number of threads...
 		//printf("\nChunk = %ld", chunk);
 		
-		long tid = (long)threadid;		//	Cast a 'long' here since the (void *)t was of type 'long'
+		long tid = (long)threadid;		//	Cast a 'long' here since the (void *)t was of type 'long'.   tid = thread ID.
 		//printf("\nTid = %d", (int)threadid);
 
 		long start = chunk * tid;
