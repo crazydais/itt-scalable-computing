@@ -48,6 +48,8 @@ int main(int argc, char* argv[])
     //  This free's the memory which was allocated using malloc
     free (buffer);
 
+    return 0;
+
 } //  The program ends
 
 
