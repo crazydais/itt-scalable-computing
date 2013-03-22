@@ -19,7 +19,14 @@ int main(int argc, char* argv[])
     //  The buffer pointer is equal to the memory allocation of size set by the user +1, and is cast a char*.  The cast may not be necessary, and could just be used for convention.
     //  We need to be able to dynamically set the size of the buffer because we don't know how big the sting is going to be.
     //  The extra +1 is for the last character to be '\0', ie, zero escaped. 
-    buffer = (char*) malloc (i+1);
+    //buffer = (char*) malloc (i+1);
+
+    //  A more elequient way to do this, is by using the 'sizeof' function of the pointer (ie, buffer), multiplied by 'i', plus 1.  
+    buffer = malloc(sizeof (buffer) * i + 1);
+
+    //int ch = sizeof(char);
+    //int size = (sizeof(buffer)/sizeof(char));
+    //printf("\nThe size of a single char is: %d\nand the size of our buffer is: %d\n", ch, size);
 
     //  Check to make sure the buffer is not empty.
     //  If the buffer is empty, then exit the program
